@@ -37,7 +37,9 @@ module.exports = function(source) {
   this.cacheable && this.cacheable();
   var addSuffix = ngfactoryRegex.test(path.basename(this.resourcePath));
   var newSource = source.replace(loadChildrenRegex, function(match, path) {
-    return 'loadChildren: () => ' + replacePath(path, addSuffix);
+    var trimmed = path.trim();
+    if (trimmed[0] !== '"' && trimmed !== "'") return match;
+    return 'loadChildren: () =>' + replacePath(path, addSuffix);
   });
   return newSource;
 };
