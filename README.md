@@ -2,6 +2,8 @@
 
 This is a webpack loader to [Angular2 lazy module loading](https://angular.io/docs/ts/latest/guide/router.html#!#asynchronous-routing).
 
+It's recommended to use this loader with webpack 2.x.
+
 * INPUT:
 
 ```ts
@@ -32,6 +34,32 @@ export const appRoutes: Routes = [
 ];
 ```
 
+## Install
+
+```sh
+npm install angular2-load-children-loader -D
+```
+
+```sh
+npm install @types/node -D
+```
+
+or 
+
+```sh
+typings install node
+```
+
+## Using with es6-promise-loader
+
+```ts
+export const appRoutes: Routes = [
+  {path: "", component: MainHomeComponent},
+  {path: "about", component: MainAboutComponent },
+  {path: "sub", loadChildren: "es6-promise!./sub.module#SubModule"}
+];
+```
+
 ## Working demonstration
 
 The following repository uses this loader:
@@ -41,7 +69,7 @@ The following repository uses this loader:
 
 ## Why?
 
-To load sub modules asynchronously with webpack, you can use [es6-promise-loader](https://github.com/gdi2290/es6-promise-loader). For example:
+To load sub modules asynchronously with webpack, you use only [es6-promise-loader](https://github.com/gdi2290/es6-promise-loader). For example:
 
 ```ts
 import { Routes, RouterModule } from "@angular/router";
