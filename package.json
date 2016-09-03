@@ -1,0 +1,12 @@
+{
+  "name": "angular2-load-children-loader",
+  "version": "0.1.0",
+  "description": "A webpack loader for ng2 lazy loading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["angular", "angular2", "webpack"],
+  "author": "Quramy",
+  "license": "MIT"
+}
