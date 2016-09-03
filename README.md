@@ -30,7 +30,7 @@ And this loader return a function to call the `require` function with `.ngfactor
 export const appRoutes: Routes = [
   {path: "", component: MainHomeComponent},
   {path: "about", component: MainAboutComponent },
-  {path: "sub", loadChildren: () => require("./sub.module.ngfactory")("SubModule") },
+  {path: "sub", loadChildren: () => require("./sub.module.ngfactory")("SubModuleNgFactory") },
 ];
 ```
 
