@@ -38,7 +38,7 @@ module.exports = function(source) {
   var addSuffix = ngfactoryRegex.test(path.basename(this.resourcePath));
   var newSource = source.replace(loadChildrenRegex, function(match, path) {
     var trimmed = path.trim();
-    if (trimmed[0] !== '"' && trimmed !== "'") return match;
+    if (trimmed[0] !== '"' && trimmed[0] !== "'") return match;
     return 'loadChildren: () =>' + replacePath(path, addSuffix);
   });
   return newSource;
