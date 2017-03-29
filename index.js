@@ -11,10 +11,10 @@ function replacePath(str, addSuffix) {
     var fpath = addSuffix ? tmp[0] + ".ngfactory" : tmp[0];
     var moduleName;
     if (tmp.length < 2) {
-      return 'require("' + fpath + '")()';
+      return 'require("' + fpath + '")() }';
     } else {
       moduleName = addSuffix ? tmp[1] + "NgFactory" : tmp[1]
-      return 'require("' + fpath + '")("' + moduleName + '")';
+      return 'require("' + fpath + '")("' + moduleName + '") }';
     }
   });
 }
@@ -39,7 +39,7 @@ module.exports = function(source) {
   var newSource = source.replace(loadChildrenRegex, function(match, path) {
     var trimmed = path.trim();
     if (trimmed[0] !== '"' && trimmed[0] !== "'") return match;
-    return 'loadChildren: () =>' + replacePath(path, addSuffix);
+    return 'loadChildren: function loadChildren() { return' + replacePath(path, addSuffix);
   });
   return newSource;
 };
