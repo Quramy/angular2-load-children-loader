@@ -1,5 +1,7 @@
 # Angular2 load-children loader
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Quramy/angular2-load-children-loader.svg)](https://greenkeeper.io/)
+
 This is a webpack loader to [Angular2 lazy module loading](https://angular.io/docs/ts/latest/guide/router.html#!#asynchronous-routing).
 
 It's recommended to use this loader with webpack 2.x.
