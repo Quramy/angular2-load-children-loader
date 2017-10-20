@@ -1,6 +1,6 @@
 {
   "name": "angular2-load-children-loader",
-  "version": "0.1.4",
+  "version": "0.2.1",
   "description": "A webpack loader for ng2 lazy loading",
   "main": "index.js",
   "scripts": {
