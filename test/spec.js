@@ -29,4 +29,11 @@ describe("angular2-load-children-loader", function() {
     var actual = loader.bind({ cacheable: false, resourcePath: "./app.routing.ts" })(inputSource);
     assert.equal(actual, inputSource);
   });
+
+  it("pass through loadChildren property is not string", function () {
+    var inputSource = `[{ loadChildren: "./subModule1#SubModule1" }, { loadChildren: "./subModule2#SubModule2" }]`;
+    var expected    = `[{ loadChildren: () => require("./subModule1")("SubModule1") }, { loadChildren: () => require("./subModule2")("SubModule2") }]`;
+    var actual = loader.bind({ cacheable: false, resourcePath: "./app.routing.ts" })(inputSource);
+    assert.equal(actual, expected);
+  });
 });

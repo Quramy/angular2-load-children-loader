@@ -1,7 +1,7 @@
 "use strict";
 
 var path = require("path");
-var loadChildrenRegex = /loadChildren\s*:(.*)$/gm;
+var loadChildrenRegex = /loadChildren\s*:([^\{\}]*)/gm;
 var ngfactoryRegex = /\.ngfactory(\.|$)/;
 var stringRegex = /(['"])((?:[^\\]\\\1|.)*?)\1/g;
 
